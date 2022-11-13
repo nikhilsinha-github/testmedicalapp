@@ -52,7 +52,7 @@ class _AddAddressState extends State<AddAddress> {
                     "Save And Continue",
                     style: TextStyle(color: white, fontSize: 14),
                   ),
-                )
+                ),
               ],
             ),
           ),

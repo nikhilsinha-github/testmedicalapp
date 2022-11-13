@@ -42,3 +42,4 @@ const yellowColor = Color(0xFFFFB800);
 const boxBlueColor = Color(0xFF3B67F4);
 const purpleColor = Color(0xFF7B87F4);
 const greenColor = Color(0xFF1FA908);
+const black = Color(0xFF000000);

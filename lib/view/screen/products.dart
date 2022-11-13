@@ -40,16 +40,51 @@ class _ProductsState extends State<Products> {
                 customAppBar(),
                 productSlider(),
                 medicineDetails(),
-                // extraDetails([
-                //   "Medical Description",
-                //   "Alternative Medicine/ Other Brand Medicine",
-                //   "Frequently Brought Medicines"
-                // ]),
                 customText("Uses", h1TextStyle),
                 customText(
                     '''Lörem ipsum makrons kvasid plus apogam kovåbelt. Heterode spemiliga hivis. Autos teotos av benåk en probelt rearasam trektig. Supramyv plapånade trefenade liksom klickfarm hon sper. ''',
                     h2TextStyle),
+                const SizedBox(
+                  height: 50,
+                ),
                 quantity(),
+                deliveryText(),
+                const SizedBox(
+                  height: 50,
+                ),
+                Center(
+                  child: MaterialButton(
+                    height: 50,
+                    minWidth: w * 0.7,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                    onPressed: () {},
+                    color: boxBlueColor,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 30, right: 12.0),
+                      child: Row(
+                        children: [
+                          const Text(
+                            "₹ 247",
+                            style: TextStyle(color: white, fontSize: 14),
+                          ),
+                          const Spacer(),
+                          Container(
+                            decoration: const BoxDecoration(
+                                color: white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(30))),
+                            padding: const EdgeInsets.all(4),
+                            child: const Icon(
+                              Icons.shopping_cart,
+                              color: lightBlue,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -130,14 +165,15 @@ class _ProductsState extends State<Products> {
             ],
           ),
           Row(
-            children: const [
-              Text(
+            children: [
+              const Text(
                 "4.2K",
                 style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                     color: yellowColor),
-              )
+              ),
+              ratingIcon,
             ],
           ),
         ],
@@ -181,21 +217,52 @@ class _ProductsState extends State<Products> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        IconButton(
+        MaterialButton(
+            shape: const CircleBorder(),
+            color: white,
             onPressed: () {
+              if (count == 1) return;
               setState(() {
                 count--;
               });
             },
-            icon: const Icon(Icons.minimize)),
-        Text(count.toString()),
-        IconButton(
+            child: const Text(
+              "-",
+              style: TextStyle(color: black, fontSize: 20),
+            )),
+        Text(
+          count.toString(),
+          style: h1TextStyle,
+        ),
+        MaterialButton(
+            shape: const CircleBorder(),
+            color: white,
             onPressed: () {
               setState(() {
                 count++;
               });
             },
-            icon: const Icon(Icons.add)),
+            child: const Icon(
+              Icons.add,
+              color: black,
+            )),
+      ],
+    );
+  }
+
+  Widget deliveryText() {
+    return Row(
+      children: [
+        customText("Delivery By Mon Sep 26", h2TextStyle),
+        const VerticalDivider(
+          width: 1,
+          color: Colors.red,
+          thickness: 1,
+        ),
+        customText(
+            "FREE DELIVERY",
+            const TextStyle(
+                color: Color.fromARGB(255, 2, 255, 65), fontSize: 12)),
       ],
     );
   }

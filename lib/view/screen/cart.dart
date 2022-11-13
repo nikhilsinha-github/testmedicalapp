@@ -10,6 +10,11 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
+  int count = 1;
+
+  TextStyle h1TextStyle =
+      const TextStyle(color: white, fontWeight: FontWeight.w600, fontSize: 14);
+
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -25,7 +30,10 @@ class _CartState extends State<Cart> {
         ),
         child: SingleChildScrollView(
           child: Column(
-            children: [customAppBar(), productItem("itemName", "type"),],
+            children: [
+              customAppBar(),
+              productItem("Thyroxine (100mcg) Tablet", "Thyronorm"),
+            ],
           ),
         ),
       ),
@@ -52,6 +60,43 @@ class _CartState extends State<Cart> {
     );
   }
 
+  Widget counter() {
+    return Row(
+      // mainAxisSize: MainAxisSize.min,
+      children: [
+        MaterialButton(
+            shape: const CircleBorder(),
+            color: white,
+            onPressed: () {
+              if (count == 1) return;
+              setState(() {
+                count--;
+              });
+            },
+            child: const Text(
+              "-",
+              style: TextStyle(color: black, fontSize: 20),
+            )),
+        Text(
+          count.toString(),
+          style: h1TextStyle,
+        ),
+        MaterialButton(
+            shape: const CircleBorder(),
+            color: white,
+            onPressed: () {
+              setState(() {
+                count++;
+              });
+            },
+            child: const Icon(
+              Icons.add,
+              color: black,
+            )),
+      ],
+    );
+  }
+
   Widget productItem(String itemName, String type) {
     return Container(
       color: boxBlueColor,
@@ -61,10 +106,14 @@ class _CartState extends State<Cart> {
           Column(
             children: [
               Row(
-                children: const [],
+                children: [
+                  Text(itemName),
+                  // const Spacer(),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.delete))
+                ],
               ),
               Row(
-                children: const [],
+                children: [Text(type), counter()],
               ),
               Row(
                 children: const [

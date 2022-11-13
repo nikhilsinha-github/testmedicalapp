@@ -47,3 +47,7 @@ var uploadIcon = SvgPicture.asset(
   uploadSvg,
   height: 18,
 );
+var ratingIcon = SvgPicture.asset(
+  ratingStar,
+  height: 18,
+);
