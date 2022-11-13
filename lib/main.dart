@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:testmedicalapp/view/screen/products.dart';
+import 'package:testmedicalapp/view/screen/add_address.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       scrollBehavior: const MaterialScrollBehavior().copyWith(
           dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch}),
-      home: const Products(),
+      home: const AddAddress(),
     );
   }
 }
