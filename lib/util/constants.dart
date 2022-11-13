@@ -29,6 +29,7 @@ const discount2Svg = "assets/svg/discount_2.svg";
 const uploadSvg = "assets/svg/upload.svg";
 
 //color
+const white = Color(0xFFffffff);
 const lightBlue = Color(0xFF3671EE);
 const darkBlue = Color(0xFF2E4297);
 const hintGreyColor = Color(0xFF605C5C);
