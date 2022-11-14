@@ -144,7 +144,7 @@ class _HomescreenState extends State<Homescreen> {
                 introProducts(medicinesController),
                 imageSlider(),
                 specialProducts(),
-                shopByCategory(),
+                shopByCategory(medicinesController),
                 easyWayToGet(sw),
                 uploadPrescription(),
                 labTests(),
@@ -417,7 +417,7 @@ class _HomescreenState extends State<Homescreen> {
     );
   }
 
-  Widget shopByCategory() {
+  Widget shopByCategory(MedicinesController medicinesController) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -439,9 +439,10 @@ class _HomescreenState extends State<Homescreen> {
             left: 12.0,
           ),
           child: Wrap(
-            children: List.generate(
-              6,
-              (index) => Padding(
+            children:
+                List.generate(medicinesController.medicines.length, (index) {
+              Medicines medicines = medicinesController.medicines[index];
+              return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: GestureDetector(
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
@@ -457,19 +458,19 @@ class _HomescreenState extends State<Homescreen> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
-                          child: Image.asset(
-                            category,
+                          child: Image.network(
+                            medicines.img,
                             height: 75,
                             fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      const Text("Product Name"),
+                      Text(medicines.name),
                     ],
                   ),
                 ),
-              ),
-            ),
+              );
+            }),
           ),
         ),
       ],
