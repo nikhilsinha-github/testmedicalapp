@@ -42,6 +42,5 @@ const boxBlueColor = Color(0xFF3B67F4);
 const purpleColor = Color(0xFF7B87F4);
 const greenColor = Color(0xFF1FA908);
 
-
 //apis
 const medicinesAPI = "https://webhook.site/68d07a04-f0ae-4b10-9184-02db82bfefc1";
