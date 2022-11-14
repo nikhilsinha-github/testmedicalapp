@@ -12,10 +12,10 @@ class Products extends StatefulWidget {
 
 class _ProductsState extends State<Products> {
   int count = 1;
-  TextStyle h1TextStyle =
-      const TextStyle(color: white, fontWeight: FontWeight.w600, fontSize: 14);
-  TextStyle h2TextStyle =
-      const TextStyle(color: white, fontWeight: FontWeight.w400, fontSize: 12);
+  TextStyle h1TextStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14);
+  TextStyle h2TextStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w400, fontSize: 12);
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +66,12 @@ class _ProductsState extends State<Products> {
                         children: [
                           const Text(
                             "₹ 247",
-                            style: TextStyle(color: white, fontSize: 14),
+                            style: TextStyle(color: Colors.white, fontSize: 14),
                           ),
                           const Spacer(),
                           Container(
                             decoration: const BoxDecoration(
-                                color: white,
+                                color: Colors.white,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30))),
                             padding: const EdgeInsets.all(4),
@@ -98,13 +98,13 @@ class _ProductsState extends State<Products> {
       children: [
         const Icon(
           Icons.arrow_back,
-          color: white,
+          color: Colors.white,
         ),
         const Spacer(),
         const Text(
           "PRODUCT DETAILS",
           style: TextStyle(
-              color: white, fontWeight: FontWeight.w600, fontSize: 12),
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 12),
         ),
         const Spacer(),
         GestureDetector(onTap: () {}, child: discountIcon),
@@ -219,7 +219,7 @@ class _ProductsState extends State<Products> {
       children: [
         MaterialButton(
             shape: const CircleBorder(),
-            color: white,
+            color: Colors.white,
             onPressed: () {
               if (count == 1) return;
               setState(() {
@@ -228,7 +228,7 @@ class _ProductsState extends State<Products> {
             },
             child: const Text(
               "-",
-              style: TextStyle(color: black, fontSize: 20),
+              style: TextStyle(color: Colors.black, fontSize: 20),
             )),
         Text(
           count.toString(),
@@ -236,7 +236,7 @@ class _ProductsState extends State<Products> {
         ),
         MaterialButton(
             shape: const CircleBorder(),
-            color: white,
+            color: Colors.white,
             onPressed: () {
               setState(() {
                 count++;
@@ -244,7 +244,7 @@ class _ProductsState extends State<Products> {
             },
             child: const Icon(
               Icons.add,
-              color: black,
+              color: Colors.black,
             )),
       ],
     );

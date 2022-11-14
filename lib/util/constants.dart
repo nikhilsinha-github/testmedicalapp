@@ -29,7 +29,6 @@ const discount2Svg = "assets/svg/discount_2.svg";
 const uploadSvg = "assets/svg/upload.svg";
 
 //color
-const white = Color(0xFFffffff);
 const lightBlue = Color(0xFF3671EE);
 const darkBlue = Color(0xFF2E4297);
 const hintGreyColor = Color(0xFF605C5C);
@@ -42,4 +41,7 @@ const yellowColor = Color(0xFFFFB800);
 const boxBlueColor = Color(0xFF3B67F4);
 const purpleColor = Color(0xFF7B87F4);
 const greenColor = Color(0xFF1FA908);
-const black = Color(0xFF000000);
+
+
+//apis
+const medicinesAPI = "https://webhook.site/68d07a04-f0ae-4b10-9184-02db82bfefc1";

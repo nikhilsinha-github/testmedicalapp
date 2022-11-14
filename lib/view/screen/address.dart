@@ -10,10 +10,10 @@ class Address extends StatefulWidget {
 }
 
 class _AddressState extends State<Address> {
-  TextStyle h1TextStyle =
-      const TextStyle(color: white, fontWeight: FontWeight.w600, fontSize: 14);
-  TextStyle h2TextStyle =
-      const TextStyle(color: white, fontWeight: FontWeight.w400, fontSize: 12);
+  TextStyle h1TextStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14);
+  TextStyle h2TextStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w400, fontSize: 12);
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -44,7 +44,7 @@ class _AddressState extends State<Address> {
                   color: boxBlueColor,
                   child: const Text(
                     "Place Order",
-                    style: TextStyle(color: white, fontSize: 14),
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ),
               ),
@@ -60,13 +60,13 @@ class _AddressState extends State<Address> {
       children: [
         const Icon(
           Icons.arrow_back,
-          color: white,
+          color: Colors.white,
         ),
         const Spacer(),
         const Text(
           "ADDRESS",
           style: TextStyle(
-              color: white, fontWeight: FontWeight.w600, fontSize: 12),
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 12),
         ),
         const Spacer(),
         GestureDetector(onTap: () {}, child: discountIcon),
@@ -77,8 +77,8 @@ class _AddressState extends State<Address> {
   Widget paymentOptions() {
     return Container(
       decoration: const BoxDecoration(
-      color: boxBlueColor,
-      )
+        color: boxBlueColor,
+      ),
       child: Column(
         children: [
           Text(

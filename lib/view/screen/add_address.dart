@@ -50,7 +50,7 @@ class _AddAddressState extends State<AddAddress> {
                   color: boxBlueColor,
                   child: const Text(
                     "Save And Continue",
-                    style: TextStyle(color: white, fontSize: 14),
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ),
               ],
@@ -67,14 +67,14 @@ class _AddAddressState extends State<AddAddress> {
       children: const [
         Icon(
           Icons.arrow_back,
-          color: white,
+          color: Colors.white,
         ),
         Expanded(
           child: Text(
             "ADD ADDRESS",
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: white, fontWeight: FontWeight.w600, fontSize: 12),
+                color: Colors.white, fontWeight: FontWeight.w600, fontSize: 12),
           ),
         ),
       ],
@@ -98,7 +98,7 @@ class _AddAddressState extends State<AddAddress> {
         formField("street name**", "", streetNameController),
         const Text(
           "Address Type*",
-          style: TextStyle(color: white, fontSize: 14),
+          style: TextStyle(color: Colors.white, fontSize: 14),
         ),
         const SizedBox(
           height: 10,
@@ -126,13 +126,13 @@ class _AddAddressState extends State<AddAddress> {
               iconData,
               color: Colors.black,
             ),
-            selectedColor: white,
+            selectedColor: Colors.white,
           ),
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text(
               "7am -10pm",
-              style: TextStyle(color: white, fontSize: 14),
+              style: TextStyle(color: Colors.white, fontSize: 14),
             ),
           )
         ],
@@ -146,11 +146,11 @@ class _AddAddressState extends State<AddAddress> {
       controller: controller,
       decoration: InputDecoration(
         label: Text(label),
-        labelStyle: const TextStyle(color: white),
+        labelStyle: const TextStyle(color: Colors.white),
         helperText: helperText,
         border: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: white,
+            color: Colors.white,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(5),
@@ -158,7 +158,7 @@ class _AddAddressState extends State<AddAddress> {
         ),
         errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: white,
+            color: Colors.white,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(5),
@@ -166,7 +166,7 @@ class _AddAddressState extends State<AddAddress> {
         ),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: white,
+            color: Colors.white,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(5),
@@ -174,7 +174,7 @@ class _AddAddressState extends State<AddAddress> {
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: white,
+            color: Colors.white,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(5),
@@ -182,7 +182,7 @@ class _AddAddressState extends State<AddAddress> {
         ),
         disabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: white,
+            color: Colors.white,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(5),
@@ -190,7 +190,7 @@ class _AddAddressState extends State<AddAddress> {
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: white,
+            color: Colors.white,
           ),
           borderRadius: BorderRadius.all(
             Radius.circular(5),

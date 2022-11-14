@@ -12,8 +12,8 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   int count = 1;
 
-  TextStyle h1TextStyle =
-      const TextStyle(color: white, fontWeight: FontWeight.w600, fontSize: 14);
+  TextStyle h1TextStyle = const TextStyle(
+      color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14);
 
   @override
   Widget build(BuildContext context) {
@@ -45,13 +45,13 @@ class _CartState extends State<Cart> {
       children: [
         const Icon(
           Icons.arrow_back,
-          color: white,
+          color: Colors.white,
         ),
         const Spacer(),
         const Text(
           "CART",
           style: TextStyle(
-              color: white, fontWeight: FontWeight.w600, fontSize: 12),
+              color: Colors.white, fontWeight: FontWeight.w600, fontSize: 12),
         ),
         const Spacer(),
         GestureDetector(onTap: () {}, child: discountIcon),
@@ -66,7 +66,7 @@ class _CartState extends State<Cart> {
       children: [
         MaterialButton(
             shape: const CircleBorder(),
-            color: white,
+            color: Colors.white,
             onPressed: () {
               if (count == 1) return;
               setState(() {
@@ -75,7 +75,7 @@ class _CartState extends State<Cart> {
             },
             child: const Text(
               "-",
-              style: TextStyle(color: black, fontSize: 20),
+              style: TextStyle(color: Colors.black, fontSize: 20),
             )),
         Text(
           count.toString(),
@@ -83,7 +83,7 @@ class _CartState extends State<Cart> {
         ),
         MaterialButton(
             shape: const CircleBorder(),
-            color: white,
+            color: Colors.white,
             onPressed: () {
               setState(() {
                 count++;
@@ -91,7 +91,7 @@ class _CartState extends State<Cart> {
             },
             child: const Icon(
               Icons.add,
-              color: black,
+              color: Colors.black,
             )),
       ],
     );
