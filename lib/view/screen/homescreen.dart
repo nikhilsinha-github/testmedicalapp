@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:testmedicalapp/controller/medicines_controller.dart';
+import 'package:testmedicalapp/model/medicines_model.dart';
 import 'package:testmedicalapp/util/constants.dart';
 import 'package:testmedicalapp/util/svg.dart';
 import 'package:testmedicalapp/view/screen/login.dart';
@@ -66,7 +69,9 @@ class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     var sw = MediaQuery.of(context).size.width;
+    MedicinesController mediciniesController = Get.put(MedicinesController());
     return Scaffold(
+      backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -129,34 +134,37 @@ class _HomescreenState extends State<Homescreen> {
           ),
         ],
       ),
-      body: SafeArea(
+      body: GetBuilder<MedicinesController>(
+        builder: (medicinesController) => SafeArea(
           child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            customAppBar(),
-            introProducts(),
-            imageSlider(),
-            specialProducts(),
-            shopByCategory(),
-            easyWayToGet(sw),
-            uploadPrescription(),
-            labTests(),
-            membershipCard(),
-            flatDiscountList(),
-            featuredBrands(),
-            essentialsList(),
-            rateUs(),
-            const SizedBox(
-              height: 20,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                customAppBar(),
+                introProducts(medicinesController),
+                imageSlider(),
+                specialProducts(),
+                shopByCategory(),
+                easyWayToGet(sw),
+                uploadPrescription(),
+                labTests(),
+                membershipCard(),
+                flatDiscountList(),
+                featuredBrands(),
+                essentialsList(),
+                rateUs(),
+                const SizedBox(
+                  height: 20,
+                ),
+                giftCard(),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
             ),
-            giftCard(),
-            const SizedBox(
-              height: 20,
-            ),
-          ],
+          ),
         ),
-      )),
+      ),
     );
   }
 
@@ -280,14 +288,15 @@ class _HomescreenState extends State<Homescreen> {
     );
   }
 
-  Widget introProducts() {
+  Widget introProducts(MedicinesController medicinesController) {
     return SizedBox(
       height: 150,
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: medicinesController.medicines.length,
         itemBuilder: (context, index) {
+          Medicines medicines = medicinesController.medicines[index];
           return GestureDetector(
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => const ProductDetailsScreen())),
@@ -296,14 +305,14 @@ class _HomescreenState extends State<Homescreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                Image.asset(
-                  medicine1,
+                Image.network(
+                  medicines.img,
                   width: 125,
                   height: 100,
                 ),
-                const Text(
-                  "Medicine",
-                  style: TextStyle(
+                Text(
+                  medicines.name,
+                  style: const TextStyle(
                     color: primaryBlueTextColor,
                   ),
                 ),

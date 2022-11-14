@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:testmedicalapp/view/screen/splash_screen.dart';
+import 'package:get/get.dart';
+import 'package:testmedicalapp/helper/ruote_helper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
     );
   }
 }

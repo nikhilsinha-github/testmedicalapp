@@ -37,6 +37,7 @@ dependencies:
   flutter_svg: ^1.1.6
   dropdown_plus: ^0.0.9
   carousel_slider: ^4.1.1
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:
